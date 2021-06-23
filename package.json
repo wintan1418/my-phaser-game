@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dasileker/Repo-Template.git"
+    "url": "git+https://github.com/wintan1418/Repo-Template.git"
   },
-  "author": "Zerradi Amine",
+  "author": "wintan1418",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dasileker/Repo-Template/issues"
+    "url": "https://github.com/wintan1418/Repo-Template/issues"
   },
-  "homepage": "https://github.com/dasileker/Repo-Template#readme",
+  "homepage": "https://github.com/wintan1418/Repo-Template#readme",
   "dependencies": {
     "phaser": "^3.51.0"
   },
