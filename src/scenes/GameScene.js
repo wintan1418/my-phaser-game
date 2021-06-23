@@ -102,3 +102,101 @@ if (!this.player.getData('dead')) {
   } else if (this.keyD.isDown) {
     this.player.right();
   }
+  if (this.space.isDown) {
+    this.player.setData('shooting', true);
+  } else {
+    this.player.setData(
+      'shootTime',
+      this.player.getData('shotFrequency') - 1,
+    );
+    this.player.setData('shooting', false);
+  }
+}
+
+// If crash then game over
+this.physics.add.overlap(
+  this.player,
+  this.enemies,
+  function crash(player, enemy) {
+    if (!player.getData('dead') && !enemy.getData('dead')) {
+      this.sfx.gameOver.play();
+      player.dead(false);
+      player.shot();
+      enemy.dead(true);
+      this.sys.game.globals.score = this.scoreTotal;
+      this.scoreTotal = 0;
+    }
+  },
+  null,
+  this,
+);
+
+// If shot enemy then enemy dies
+this.physics.add.collider(
+  this.playerLasers,
+  this.enemies,
+  function shootEnemy(playerLaser, enemy) {
+    if (enemy) {
+      if (enemy.shot !== undefined) {
+        enemy.shot();
+      }
+      this.scoreTotal += 10;
+      this.scoreText.setText(`Score: ${this.scoreTotal}`);
+      enemy.dead(true);
+      playerLaser.destroy();
+    }
+  },
+  null,
+  this,
+);
+
+// If shot then player is dead
+this.physics.add.overlap(
+  this.player,
+  this.enemyLasers,
+  function playerShot(player, laser) {
+    if (!player.getData('dead') && !laser.getData('dead')) {
+      this.sfx.gameOver.play();
+      player.dead(false);
+      player.shot();
+      laser.destroy();
+      this.sys.game.globals.score = this.scoreTotal;
+      this.scoreTotal = 0;
+    }
+  },
+  null,
+  this,
+);
+
+// DELETE enemies if they haven't been shot
+for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
+  const enemy = this.enemies.getChildren()[i];
+
+  enemy.update();
+
+  if (enemy.x < -enemy.displayWidth
+    || enemy.x > config.width + enemy.displayWidth
+    || enemy.y < -enemy.displayHeight * 4
+    || enemy.y > config.height + enemy.displayHeight) {
+    if (enemy) {
+      if (enemy.shot !== undefined) {
+        enemy.shot();
+      }
+      enemy.destroy();
+    }
+  }
+}
+
+// DELETE enemy lasers
+for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
+  const laser = this.enemyLasers.getChildren()[i];
+  laser.update();
+  if (laser.x < -laser.displayWidth
+    || laser.x > config.width + laser.displayWidth
+    || laser.y < -laser.displayHeight * 4
+    || laser.y > config.height + laser.displayHeight) {
+    if (laser) {
+      laser.destroy();
+    }
+  }
+}
