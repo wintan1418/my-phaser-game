@@ -1,0 +1,73 @@
+{
+  "name": "phaser3-project-template",
+  "version": "1.1.2",
+  "description": "A Phaser 3 Project Template",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "npm run stylelint && npm run eslint && echo \"Passed ✅✅ No errors! 😁😁\"",
+    "build": "webpack --config webpack/prod.js ",
+    "start": "webpack-dev-server --config webpack/base.js --open",
+    "stylelint": "npx stylelint '**/*.{css,scss}'",
+    "eslint": "npx eslint .",
+    "fix": "npx stylelint '**/*.{css,scss}' --fix && npx eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dasileker/Repo-Template.git"
+  },
+  "author": "Zerradi Amine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dasileker/Repo-Template/issues"
+  },
+  "homepage": "https://github.com/dasileker/Repo-Template#readme",
+  "dependencies": {
+    "phaser": "^3.51.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
+    "setupFilesAfterEnv": [
+      "jest-expect-subclass"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/test/mocks/styleMock.js",
+      "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/mocks/fileMock.js"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-eslint": "10.1.0",
+    "babel-loader": "8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.2",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "file-loader": "6.2.0",
+    "html-webpack-plugin": "4.5.1",
+    "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.0",
+    "jest-expect-subclass": "^1.0.1",
+    "raw-loader": "4.0.2",
+    "stylelint": "13.3.x",
+    "stylelint-config-standard": "20.0.x",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "3.17.x",
+    "terser-webpack-plugin": "^2.2.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
