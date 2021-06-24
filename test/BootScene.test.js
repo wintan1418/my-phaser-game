@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import BootScene from '../src/scenes/BootScene';
 
-it('checks if the class BootScene is defined', () => {
+it('Scans to check if the class BootScene is defined', () => {
   expect(BootScene).toBeDefined();
 });
 
