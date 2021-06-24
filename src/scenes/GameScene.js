@@ -24,7 +24,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    // Background Image
     const img = this.add.image(
       this.cameras.main.width / 2,
       this.cameras.main.height / 2,
@@ -36,23 +35,19 @@ export default class GameScene extends Phaser.Scene {
     const scale = Math.max(scaleX, scaleY);
     img.setScale(scale).setScrollFactor(0);
 
-    // Scores Display
     this.scoreText = this.add.text(40, 40, '', {
       font: '24px Courier',
       fill: '#00ff00',
     });
 
-    // Player Ship
     this.player = new Player(this, 400, 500, 'player').setScale(0.5);
     this.add.existing(this.player);
 
-    // Sounds
     this.sfx = {
       laser: this.sound.add('laser-sound'),
       gameOver: this.sound.add('game-over-sound'),
     };
 
-    // KEYS
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
     this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
     this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -63,12 +58,10 @@ export default class GameScene extends Phaser.Scene {
       Phaser.Input.Keyboard.KeyCodes.SPACE,
     );
 
-    // Groups
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
 
-    // Enemies
     this.time.addEvent({
       delay: 800,
       callback() {
@@ -115,7 +108,6 @@ export default class GameScene extends Phaser.Scene {
       }
     }
 
-    // If crash then game over
     this.physics.add.overlap(
       this.player,
       this.enemies,
@@ -152,7 +144,6 @@ export default class GameScene extends Phaser.Scene {
       this,
     );
 
-    // If shot then player is dead
     this.physics.add.overlap(
       this.player,
       this.enemyLasers,
@@ -170,7 +161,6 @@ export default class GameScene extends Phaser.Scene {
       this,
     );
 
-    // DELETE enemies if they haven't been shot
     for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
 
@@ -189,7 +179,6 @@ export default class GameScene extends Phaser.Scene {
       }
     }
 
-    // DELETE enemy lasers
     for (let i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
       const laser = this.enemyLasers.getChildren()[i];
       laser.update();
@@ -203,7 +192,6 @@ export default class GameScene extends Phaser.Scene {
       }
     }
 
-    // DELETE player lasers if haven't shot an enemy
     for (let i = 0; i < this.playerLasers.getChildren().length; i += 1) {
       const laser = this.playerLasers.getChildren()[i];
       laser.update();
