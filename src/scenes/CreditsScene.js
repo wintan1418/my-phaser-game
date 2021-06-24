@@ -15,7 +15,7 @@ export default class CreditsScene extends Phaser.Scene {
       fill: '#fff',
     });
 
-    this.madeForText = this.add.text(0, 0, 'Microverse Capstone Project', {
+    this.madeForText = this.add.text(0, 0, 'OLUWADARE JUWON WINTAN', {
       fontSize: '26px',
       fill: '#fff',
     });

@@ -16,7 +16,7 @@ it('checks if fetches once', () => {
 
 it('checks if function does not call for another url', () => {
   postScores(url);
-  expect(fetch).not.toHaveBeenCalledWith('www.youtube.com');
+  expect(fetch).not.toHaveBeenCalledWith('www.netlify.com');
 });
 
 it('checks if score was uploaded', () => {
