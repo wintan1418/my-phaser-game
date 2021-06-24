@@ -83,8 +83,6 @@
 - Run `npm test` to start testing
 - All tests will pass 👌
 
-- ![tests](./assets/.png)
-- ![tests](./assets/.png)
 
 ## Author
 
@@ -93,7 +91,7 @@
 Oluwadare Juwon
 
 - Github: [@Oluwadare Juwon](https://github.com/wintan1418)
-- Linkedin: (www.linkedin.com/in/oluwintan)
+- Linkedin:[Oluwadare-juwon] (www.linkedin.com/in/oluwintan)
 - Twitter: [Oluwadare-juwon](https://twitter.com/@oluwadarejuwon)
 
 
