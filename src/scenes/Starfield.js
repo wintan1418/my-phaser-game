@@ -18,7 +18,7 @@ export default class Starfield extends Phaser.Scene {
   }
 
   preload() {
-    // this.load.image('star', 'assets/sky.png');
+    this.load.image('star', 'assets/sky.png');
   }
 
   create() {

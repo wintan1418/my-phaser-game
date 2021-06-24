@@ -41,6 +41,7 @@ export default class GameScene extends Phaser.Scene {
       font: '24px Courier',
       fill: '#00ff00',
     });
+
     // Player Ship
     this.player = new Player(this, 400, 500, 'player').setScale(0.5);
     this.add.existing(this.player);
@@ -102,6 +103,7 @@ export default class GameScene extends Phaser.Scene {
       } else if (this.keyD.isDown) {
         this.player.right();
       }
+
       if (this.space.isDown) {
         this.player.setData('shooting', true);
       } else {
@@ -175,9 +177,9 @@ export default class GameScene extends Phaser.Scene {
       enemy.update();
 
       if (enemy.x < -enemy.displayWidth
-    || enemy.x > config.width + enemy.displayWidth
-    || enemy.y < -enemy.displayHeight * 4
-    || enemy.y > config.height + enemy.displayHeight) {
+        || enemy.x > config.width + enemy.displayWidth
+        || enemy.y < -enemy.displayHeight * 4
+        || enemy.y > config.height + enemy.displayHeight) {
         if (enemy) {
           if (enemy.shot !== undefined) {
             enemy.shot();
@@ -192,22 +194,23 @@ export default class GameScene extends Phaser.Scene {
       const laser = this.enemyLasers.getChildren()[i];
       laser.update();
       if (laser.x < -laser.displayWidth
-    || laser.x > config.width + laser.displayWidth
-    || laser.y < -laser.displayHeight * 4
-    || laser.y > config.height + laser.displayHeight) {
+        || laser.x > config.width + laser.displayWidth
+        || laser.y < -laser.displayHeight * 4
+        || laser.y > config.height + laser.displayHeight) {
         if (laser) {
           laser.destroy();
         }
       }
     }
+
     // DELETE player lasers if haven't shot an enemy
     for (let i = 0; i < this.playerLasers.getChildren().length; i += 1) {
       const laser = this.playerLasers.getChildren()[i];
       laser.update();
       if (laser.x < -laser.displayWidth
-    || laser.x > config.width + laser.displayWidth
-    || laser.y < -laser.displayHeight * 4
-    || laser.y > config.height + laser.displayHeight) {
+        || laser.x > config.width + laser.displayWidth
+        || laser.y < -laser.displayHeight * 4
+        || laser.y > config.height + laser.displayHeight) {
         if (laser) {
           laser.destroy();
         }

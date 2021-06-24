@@ -33,6 +33,7 @@ export default class LeaderBoard extends Phaser.Scene {
           .setOrigin();
       }
     });
+
     this.menuButton = new Button(
       this,
       400,

@@ -10,8 +10,7 @@ export default class EnemyOne extends Base {
 
     this.shotFrequency = this.scene.time.addEvent({
       delay: 1100,
-     
+
     });
   }
-
 }

@@ -1,4 +1,4 @@
-const key = 'ppsmmylsacuepsuj';
+const key = 'ppnlbcnkkvogqegsfk';
 const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores`;
 const networkError = (response) => {
   if (!response.ok) {

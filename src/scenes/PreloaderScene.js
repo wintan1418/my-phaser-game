@@ -22,6 +22,7 @@ export default class PreloaderScene extends Phaser.Scene {
         fill: '#ffffff',
       },
     });
+
     loadingText.setOrigin(0.5, 0.5);
 
     const percentText = this.make.text({
@@ -56,6 +57,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.on('fileprogress', (file) => {
       assetText.setText(`Loading asset: ${file.key}`);
     });
+
     this.load.on('complete', () => {
       progressBar.destroy();
       progressBox.destroy();
