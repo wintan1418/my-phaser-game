@@ -3,6 +3,7 @@
 import Phaser from 'phaser';
 import config from '../config/config';
 import { postScores, url } from '../components/api';
+import Button from '../components/Button';
 
 export default class GameOver extends Phaser.Scene {
   constructor() {
@@ -67,6 +68,16 @@ export default class GameOver extends Phaser.Scene {
         });
     });
     this.add.dom(config.width * 0.5, config.height * 0.5, form);
+
+    this.menuButton = new Button(
+      this,
+      400,
+      500,
+      'blueButton1',
+      'blueButton2',
+      'Menu',
+      'Title',
+    );
   }
 }
 
