@@ -88,11 +88,14 @@
 
 ## Author
 
-### ZErradi Amine
+👤 Author
 
-- [Github](https://www.github.com/dasileker/).
-- [linkedIn](https://www.linkedin.com/zerradi)
-### 🤝 Contributing
+Oluwadare Juwon
+
+- Github: [@Oluwadare Juwon](https://github.com/wintan1418)
+- Linkedin: (www.linkedin.com/in/oluwintan)
+- Twitter: [Oluwadare-juwon](https://twitter.com/@oluwadarejuwon)
+
 
 Contributions, issues and feature requests are welcome!
 .
