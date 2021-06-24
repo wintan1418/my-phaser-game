@@ -60,9 +60,6 @@
 
 <a href="https://covide-killer.netlify.app/"><img src="https://www.netlify.com/img/deploy/button.svg"></a>
 
-## Loom video
-[Loom video!]()
-
 
 ## Install 🛠
 

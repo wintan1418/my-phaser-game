@@ -142,7 +142,7 @@ export default class GameScene extends Phaser.Scene {
           if (enemy.shot !== undefined) {
             enemy.shot();
           }
-          this.scoreTotal += 10;
+          this.scoreTotal += 15;
           this.scoreText.setText(`Score: ${this.scoreTotal}`);
           enemy.dead(true);
           playerLaser.destroy();
