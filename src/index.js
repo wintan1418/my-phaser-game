@@ -8,7 +8,6 @@ import TitleScene from './scenes/TitleScene';
 import OptionsScene from './scenes/OptionsScene';
 import CreditsScene from './scenes/CreditsScene';
 import GameOver from './scenes/GameOver';
-// import Starfield from './scenes/Starfield';
 import LeaderBoard from './scenes/LeaderBoard';
 
 export default class Game extends Phaser.Game {
@@ -27,7 +26,6 @@ export default class Game extends Phaser.Game {
     this.scene.add('GameScene', GameScene);
     this.scene.add('GameOver', GameOver);
     this.scene.add('LeaderBoard', LeaderBoard);
-    // this.scene.add('Starfield', Starfield);
   }
 }
 

@@ -35,7 +35,6 @@ export default class GameOver extends Phaser.Scene {
       )
       .setOrigin();
 
-    // FORM
     const form = document.createElement('form');
     const input = document.createElement('input');
     const submit = document.createElement('button');
@@ -54,7 +53,6 @@ export default class GameOver extends Phaser.Scene {
     form.appendChild(input);
     form.appendChild(submit);
 
-    // Submit Form
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.querySelector('#name').value;

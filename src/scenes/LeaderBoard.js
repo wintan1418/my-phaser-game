@@ -9,7 +9,6 @@ export default class LeaderBoard extends Phaser.Scene {
   }
 
   create() {
-    // Title
     this.add
       .text(config.width * 0.5, 50, 'Best scores', {
         fontSize: 40,

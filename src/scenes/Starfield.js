@@ -22,7 +22,6 @@ export default class Starfield extends Phaser.Scene {
   }
 
   create() {
-    //  Do this, otherwise this Scene will steal all keyboard input
     this.input.keyboard.enabled = false;
 
     this.stars = this.add.blitter(0, 0, 'star');

@@ -125,7 +125,6 @@ export default class GameScene extends Phaser.Scene {
       this,
     );
 
-    // If enemy shot then enemy dies
     this.physics.add.collider(
       this.playerLasers,
       this.enemies,
