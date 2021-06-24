@@ -14,19 +14,19 @@
 
 > This game depicts the world of virus,"hmm" shooting virus, the red cross vaccine comes to the rescue against the deadly pandemic disease "covid".this game was built using `Phaser` frame work as acknowledged above.
 
-![gif](./assests/images/covidwar.gif)
+![gif](./assests/covidwar.gif)
 
 ## CREDITS SCENE
 
-![gif](./assests/images/credits.gif)
+![gif](./assests/credits.gif)
 
 ## MENU SCENE
 
-![gif](./assests/images/menu.gif)
+![gif](./assests/menu.gif)
 
 ## GAME OVER
 
-![gif](./assests/images/game-over.gif)
+![gif](./assests/game-over.gif)
 
 
 
